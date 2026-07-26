@@ -30,6 +30,8 @@ BANNER = r"""
 / ___ \ |_| | || (_) ||  _|| |_| |/ / / /
 /_/   \_\__,_|\__\___/ |_|   \__,_/___/___|
 by assili_yassine
+
+ https://github.com/Assili-yassine
   Authorized recon + ffuf orchestration
 """
 
