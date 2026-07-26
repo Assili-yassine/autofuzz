@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autofuzz"
+version = "1.0.0"
+description = "Recon + ffuf orchestration for authorized bug bounty testing"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "rich>=13.7",
+    "PyYAML>=6.0",
+    "Jinja2>=3.1",
+]
+
+# This is what makes `autofuzz` a real command on PATH after `pip install .`
+# — pip generates a small wrapper executable (in the environment's bin dir,
+# or ~/.local/bin for --user installs) that calls autofuzz.cli:main().
+# No manual chmod/mv/PATH editing needed.
+[project.scripts]
+autofuzz = "autofuzz.cli:main"
+
+[tool.setuptools]
+packages = ["autofuzz", "autofuzz.recon", "autofuzz.fuzz", "autofuzz.report"]
+
+[tool.setuptools.package-data]
+autofuzz = []
